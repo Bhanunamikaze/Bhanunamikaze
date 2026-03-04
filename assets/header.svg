@@ -13,15 +13,15 @@
     </style>
         <defs>
               <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#0D1117"/><stop offset="25%" stop-color="#1A0A0A"/><stop offset="50%" stop-color="#4A0E0E"/><stop offset="75%" stop-color="#8B0000"/><stop offset="100%" stop-color="#DC143C"/>
+                <stop offset="0%" stop-color="#0D1117"/><stop offset="25%" stop-color="#161B22"/><stop offset="50%" stop-color="#4A0E0E"/><stop offset="75%" stop-color="#8B0000"/><stop offset="100%" stop-color="#DC143C"/>
               </linearGradient>
-              <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
-                <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#000000" flood-opacity="0.7"/>
-              </filter>
             </defs>
         
+      <!-- Solid dark background -->
+      <rect width="854" height="200" fill="#0D1117"/>
+      
       <g transform="translate(427, 100) scale(1, 1) translate(-427, -100)">
-        <path d="" fill="url(#linear)" opacity="0.4" >
+        <path d="" fill="url(#linear)" opacity="0.8" >
           <animate
               attributeName="d"
               dur="20s"
@@ -33,7 +33,7 @@
               values="M0 0L 0 120Q 213.5 160 427 130T 854 155L 854 0 Z;M0 0L 0 145Q 213.5 160 427 140T 854 130L 854 0 Z;M0 0L 0 165Q 213.5 135 427 165T 854 130L 854 0 Z;M0 0L 0 120Q 213.5 160 427 130T 854 155L 854 0 Z">
           </animate>
         </path>
-        <path d="" fill="url(#linear)" opacity="0.4" >
+        <path d="" fill="url(#linear)" opacity="0.6" >
           <animate
             attributeName="d"
             dur="20s"
@@ -46,7 +46,7 @@
           </animate>
         </path>
       </g>
-         <text text-anchor="middle" alignment-baseline="middle" x="50%" y="35%" class="text" style="fill:#FFFFFF;" stroke="#000" stroke-width="0.5" filter="url(#shadow)">Bhanu Namikaze</text>
-        <text text-anchor="middle" alignment-baseline="middle" x="50%" y="55%" class="desc" style="fill:#FFFFFF;" filter="url(#shadow)">Offensive Security | Adversary Emulation</text>
+         <text text-anchor="middle" alignment-baseline="middle" x="50%" y="35%" class="text" style="fill:#FFFFFF;" stroke="none">Bhanu Namikaze</text>
+        <text text-anchor="middle" alignment-baseline="middle" x="50%" y="55%" class="desc" style="fill:#C9D1D9;">Offensive Security | Adversary Emulation</text>
       </svg>
     
