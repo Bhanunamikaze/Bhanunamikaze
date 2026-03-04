@@ -33,6 +33,17 @@ declare -A LANGUAGES=(
   ["sql"]="SQL-000?style=for-the-badge&logo=mysql&logoColor=4479A1"
 )
 
+# --- Tools Badges ---
+declare -A TOOLS=(
+  ["linux"]="Linux-000?style=for-the-badge&logo=linux&logoColor=FCC624"
+  ["docker"]="Docker-000?style=for-the-badge&logo=docker"
+  ["git"]="Git-000?style=for-the-badge&logo=git"
+  ["github-actions"]="GitHub_Actions-000?style=for-the-badge&logo=githubactions"
+  ["vmware"]="VMware-000?style=for-the-badge&logo=vmware&logoColor=607078"
+  ["aws"]="AWS-000?style=for-the-badge&logo=amazonaws&logoColor=FF9900"
+  ["ansible"]="Ansible-000?style=for-the-badge&logo=ansible&logoColor=EE0000"
+)
+
 # --- Project Badges ---
 declare -A PROJECTS=(
   ["dpapi-bof"]="🩸_DPAPI__BOF-Cobalt_Strike_BOFs-FF0000?style=for-the-badge&labelColor=000"
@@ -65,12 +76,20 @@ download_badges() {
 
 download_badges OFFENSIVE
 download_badges LANGUAGES
+download_badges TOOLS
 download_badges PROJECTS
 download_badges SOCIAL
 
 echo ""
+echo "📥 Downloading separator..."
+curl -sfL "https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" -o "$ASSETS_DIR/separator.gif" && echo "  ✅ separator.gif" || echo "  ❌ separator.gif"
+
+echo ""
 echo "📥 Downloading stats cards..."
 USERNAME="${1:-Bhanunamikaze}"
+
+# GitHub Readme Stats (using sigma-five fork since default deployment is paused)
+curl -sfL "https://github-readme-stats-sigma-five.vercel.app/api?username=${USERNAME}&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true&bg_color=0D1117&title_color=FF6B6B&icon_color=FF6B6B&text_color=C9D1D9&ring_color=FF0000" -o "$ASSETS_DIR/stats/github-stats.svg" && echo "  ✅ github-stats.svg" || echo "  ❌ github-stats.svg"
 
 # Profile Summary Cards
 curl -sfL "http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=${USERNAME}&theme=radical" -o "$ASSETS_DIR/stats/profile-details.svg" && echo "  ✅ profile-details.svg" || echo "  ❌ profile-details.svg"

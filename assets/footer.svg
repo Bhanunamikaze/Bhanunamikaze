@@ -15,6 +15,9 @@
               <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stop-color="#0D1117"/><stop offset="25%" stop-color="#1A0A0A"/><stop offset="50%" stop-color="#4A0E0E"/><stop offset="75%" stop-color="#8B0000"/><stop offset="100%" stop-color="#DC143C"/>
               </linearGradient>
+              <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+                <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.5"/>
+              </filter>
             </defs>
         
       <g transform="translate(427, 70) scale(1, 1) translate(-427, -70)">
@@ -45,8 +48,9 @@
       </g>
       
       <!-- Footer quote -->
-      <text class="desc" x="427" y="125" text-anchor="middle" fill="#FF666688" font-family="'Courier New', monospace" font-size="14">"Hacking Dont Need Agreements"</text>
-      <text class="desc" x="427" y="148" text-anchor="middle" fill="#FF444466" font-family="'Courier New', monospace" font-size="11">— Hacking Dream</text>
+      <text class="desc" x="427" y="125" text-anchor="middle" fill="#C9D1D9" font-family="'Courier New', monospace" font-size="14" filter="url(#shadow)">"Hacking Dont Need Agreements"</text>
+      <text class="desc" x="427" y="148" text-anchor="middle" fill="#8B949E" font-family="'Courier New', monospace" font-size="11" filter="url(#shadow)">— Hacking Dream</text>
         
       </svg>
     
+

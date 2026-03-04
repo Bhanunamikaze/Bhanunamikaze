@@ -13,7 +13,7 @@
 
 <!-- TYPING SVG: Self-hosted CSS animation -->
 <div align="center">
-  <a href="https://www.hackingdream.net">
+  <a href="https://www.hackingdream.net" target="_blank">
     <img src="assets/typing.svg" width="650" alt="Typing animation" />
   </a>
 </div>
@@ -61,7 +61,7 @@ fun_fact: >
 
 ### 📊 &nbsp; GitHub at a Glance
 
-<a href="https://github.com/Bhanunamikaze">
+<a href="https://github.com/Bhanunamikaze" target="_blank">
   <img width="100%" src="assets/stats/github-stats.svg" alt="GitHub Stats" />
 </a>
 
@@ -72,11 +72,11 @@ fun_fact: >
 
 | 🔥 Contributions (Year) | 📦 Repositories | 📝 Lines of Code |
 |:---:|:---:|:---:|
-| **<!--CONTRIBUTIONS-->282<!--/CONTRIBUTIONS-->** | **<!--REPOS-->52<!--/REPOS-->** | **<!--LOC-->904.4K+<!--/LOC-->** |
+| **<!--CONTRIBUTIONS-->—<!--/CONTRIBUTIONS-->** | **<!--REPOS-->—<!--/REPOS-->** | **<!--LOC-->—<!--/LOC-->** |
 
 </div>
 
-<sub>🔄 Stats auto-updated via <a href="https://github.com/Bhanunamikaze/Bhanunamikaze/actions">GitHub Actions</a></sub>
+<sub>🔄 Stats auto-updated via <a href="https://github.com/Bhanunamikaze/Bhanunamikaze/actions" target="_blank">GitHub Actions</a></sub>
 
 </td>
 </tr>
@@ -85,24 +85,21 @@ fun_fact: >
 <!-- SEPARATOR -->
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-<!-- TECH STACK -->
-<h2>⚔️&nbsp; Tech Arsenal</h2>
-
 <!-- RED TEAM ARSENAL -->
 <h2>🔴 Red Team Arsenal</h2>
 
 <p>
-  <a href="https://github.com/Bhanunamikaze/DPAPI_BOF"><img src="assets/badges/dpapi-bof.svg" alt="DPAPI_BOF" /></a>
-  <a href="https://github.com/Bhanunamikaze/ESXiBrute"><img src="assets/badges/esxibrute.svg" alt="ESXiBrute" /></a>
-  <a href="https://github.com/Bhanunamikaze/JenkinsVulnFinder"><img src="assets/badges/jenkinsvulnfinder.svg" alt="JenkinsVulnFinder" /></a>
-  <a href="https://github.com/Bhanunamikaze/VMwareAPIPentest"><img src="assets/badges/vmwareapipentest.svg" alt="VMwareAPIPentest" /></a>
-  <a href="https://github.com/Bhanunamikaze/CalderaAgent"><img src="assets/badges/calderaagent.svg" alt="CalderaAgent" /></a>
+  <a href="https://github.com/Bhanunamikaze/DPAPI_BOF" target="_blank"><img src="assets/badges/dpapi-bof.svg" alt="DPAPI_BOF" /></a>
+  <a href="https://github.com/Bhanunamikaze/ESXiBrute" target="_blank"><img src="assets/badges/esxibrute.svg" alt="ESXiBrute" /></a>
+  <a href="https://github.com/Bhanunamikaze/JenkinsVulnFinder" target="_blank"><img src="assets/badges/jenkinsvulnfinder.svg" alt="JenkinsVulnFinder" /></a>
+  <a href="https://github.com/Bhanunamikaze/VMwareAPIPentest" target="_blank"><img src="assets/badges/vmwareapipentest.svg" alt="VMwareAPIPentest" /></a>
+  <a href="https://github.com/Bhanunamikaze/CalderaAgent" target="_blank"><img src="assets/badges/calderaagent.svg" alt="CalderaAgent" /></a>
 </p>
 
 <h2>🧰 Other Projects</h2>
 
 <p>
-  <a href="https://github.com/Bhanunamikaze/Agentic-SEO-Skill"><img src="assets/badges/agentic-seo.svg" alt="Agentic SEO Skill" /></a>
+  <a href="https://github.com/Bhanunamikaze/Agentic-SEO-Skill" target="_blank"><img src="assets/badges/agentic-seo.svg" alt="Agentic SEO Skill" /></a>
 </p>
 
 
@@ -129,10 +126,6 @@ fun_fact: >
   <img src="assets/badges/javascript.svg" alt="JavaScript" />
   <img src="assets/badges/sql.svg" alt="SQL" />
 </p>
-
-
-<!-- SEPARATOR -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 
 <!-- SEPARATOR -->
