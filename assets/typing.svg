@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 45">
+  <style>
+    @keyframes typing1 {
+      0%, 20% { opacity: 1; }
+      25%, 100% { opacity: 0; }
+    }
+    @keyframes typing2 {
+      0%, 25% { opacity: 0; }
+      30%, 50% { opacity: 1; }
+      55%, 100% { opacity: 0; }
+    }
+    @keyframes typing3 {
+      0%, 55% { opacity: 0; }
+      60%, 75% { opacity: 1; }
+      80%, 100% { opacity: 0; }
+    }
+    @keyframes typing4 {
+      0%, 80% { opacity: 0; }
+      85%, 95% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .line1 { animation: typing1 12s ease-in-out infinite; }
+    .line2 { animation: typing2 12s ease-in-out infinite; }
+    .line3 { animation: typing3 12s ease-in-out infinite; }
+    .line4 { animation: typing4 12s ease-in-out infinite; }
+    .cursor { animation: blink 0.8s step-end infinite; }
+  </style>
+  
+  <text class="line1" x="325" y="30" text-anchor="middle" font-family="'Fira Code', 'Courier New', monospace" font-size="20" font-weight="500" fill="#FF6B6B">🔓 Breaking things to make them stronger</text>
+  <text class="line2" x="325" y="30" text-anchor="middle" font-family="'Fira Code', 'Courier New', monospace" font-size="20" font-weight="500" fill="#FF6B6B">🌐 www.HackingDream.net</text>
+  <text class="line3" x="325" y="30" text-anchor="middle" font-family="'Fira Code', 'Courier New', monospace" font-size="20" font-weight="500" fill="#FF6B6B">🛡️ Offensive Security | Adversary Emulation</text>
+  <text class="line4" x="325" y="30" text-anchor="middle" font-family="'Fira Code', 'Courier New', monospace" font-size="20" font-weight="500" fill="#FF6B6B">⚔️ Red Team | Purple Team | Adversary Emulation</text>
+  
+  <rect class="cursor" x="590" y="12" width="2" height="22" fill="#FF6B6B"/>
+</svg>

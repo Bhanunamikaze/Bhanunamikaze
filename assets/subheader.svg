@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 50">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0D1117"/>
+      <stop offset="50%" style="stop-color:#2A0A0A"/>
+      <stop offset="100%" style="stop-color:#0D1117"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <style>
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+    .dot { animation: pulse 2s ease-in-out infinite; }
+  </style>
+  
+  <rect width="600" height="50" rx="25" fill="url(#bg)" stroke="#FF444433" stroke-width="1"/>
+  
+  <circle class="dot" cx="30" cy="25" r="6" fill="#FF0000" filter="url(#glow)"/>
+  
+  <text x="55" y="30" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#FF9999">Red Teamer  &amp;  Security Researcher</text>
+</svg>
