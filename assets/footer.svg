@@ -24,7 +24,7 @@
         <path d="" fill="url(#linear)" opacity="0.8" >
           <animate
               attributeName="d"
-              dur="20s"
+              dur="8s"
               repeatCount="indefinite"
               keyTimes="0;0.333;0.667;1"
               calcmod="spline"
@@ -36,12 +36,12 @@
         <path d="" fill="url(#linear)" opacity="0.6" >
           <animate
             attributeName="d"
-            dur="20s"
+            dur="8s"
             repeatCount="indefinite"
             keyTimes="0;0.333;0.667;1"
             calcmod="spline"
             keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1"
-            begin="-10s"
+            begin="-4s"
             values="M0 0L 0 55Q 213.5 100 427 70T 854 80L 854 0 Z;M0 0L 0 70Q 213.5 40 427 40T 854 60L 854 0 Z;M0 0L 0 65Q 213.5 45 427 70T 854 85L 854 0 Z;M0 0L 0 55Q 213.5 100 427 70T 854 80L 854 0 Z">
           </animate>
         </path>

@@ -30,10 +30,10 @@
     .cursor { animation: blink 0.8s step-end infinite; }
   </style>
   
-  <text class="line1" x="325" y="30" text-anchor="middle" font-family="'Fira Code', 'Courier New', monospace" font-size="20" font-weight="500" fill="#FF6B6B">🔓 Breaking things to make them stronger</text>
-  <text class="line2" x="325" y="30" text-anchor="middle" font-family="'Fira Code', 'Courier New', monospace" font-size="20" font-weight="500" fill="#FF6B6B">🌐 www.HackingDream.net</text>
-  <text class="line3" x="325" y="30" text-anchor="middle" font-family="'Fira Code', 'Courier New', monospace" font-size="20" font-weight="500" fill="#FF6B6B">🛡️ Offensive Security | Adversary Emulation</text>
-  <text class="line4" x="325" y="30" text-anchor="middle" font-family="'Fira Code', 'Courier New', monospace" font-size="20" font-weight="500" fill="#FF6B6B">⚔️ Red Teamer | Pentester | Security Researcher | Blogger</text>
+  <text class="line1" x="325" y="30" text-anchor="middle" font-family="'Fira Code', 'Courier New', monospace" font-size="18" font-weight="500" fill="#FF6B6B">🔓 Breaking things to make them stronger</text>
+  <text class="line2" x="325" y="30" text-anchor="middle" font-family="'Fira Code', 'Courier New', monospace" font-size="18" font-weight="500" fill="#FF6B6B">🌐 www.HackingDream.net</text>
+  <text class="line3" x="325" y="30" text-anchor="middle" font-family="'Fira Code', 'Courier New', monospace" font-size="18" font-weight="500" fill="#FF6B6B">🛡️ Offensive Security | Adversary Emulation</text>
+  <text class="line4" x="325" y="30" text-anchor="middle" font-family="'Fira Code', 'Courier New', monospace" font-size="16" font-weight="500" fill="#FF6B6B">⚔️ Red Teamer | Pentester | Security Researcher | Blogger</text>
   
   <rect class="cursor" x="590" y="12" width="2" height="22" fill="#FF6B6B"/>
 </svg>

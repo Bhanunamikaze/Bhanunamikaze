@@ -24,7 +24,7 @@
         <path d="" fill="url(#linear)" opacity="0.8" >
           <animate
               attributeName="d"
-              dur="20s"
+              dur="8s"
               repeatCount="indefinite"
               keyTimes="0;0.333;0.667;1"
               calcmod="spline"
@@ -36,17 +36,17 @@
         <path d="" fill="url(#linear)" opacity="0.6" >
           <animate
             attributeName="d"
-            dur="20s"
+            dur="8s"
             repeatCount="indefinite"
             keyTimes="0;0.333;0.667;1"
             calcmod="spline"
             keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1"
-            begin="-10s"
+            begin="-4s"
             values="M0 0L 0 135Q 213.5 180 427 150T 854 160L 854 0 Z;M0 0L 0 150Q 213.5 120 427 120T 854 140L 854 0 Z;M0 0L 0 145Q 213.5 125 427 150T 854 165L 854 0 Z;M0 0L 0 135Q 213.5 180 427 150T 854 160L 854 0 Z">
           </animate>
         </path>
       </g>
          <text text-anchor="middle" alignment-baseline="middle" x="50%" y="35%" class="text" style="fill:#FFFFFF;" stroke="none">Bhanu Namikaze</text>
-        <text text-anchor="middle" alignment-baseline="middle" x="50%" y="55%" class="desc" style="fill:#C9D1D9;">Offensive Security | Adversary Emulation</text>
+        <text text-anchor="middle" alignment-baseline="middle" x="50%" y="55%" class="desc" style="fill:#C9D1D9;">Red Teamer | Pentester | Security Researcher | Blogger</text>
       </svg>
     
