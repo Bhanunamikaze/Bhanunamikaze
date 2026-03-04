@@ -1,87 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" preserveAspectRatio="none">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0D1117"/>
-      <stop offset="25%" style="stop-color:#161B22"/>
-      <stop offset="50%" style="stop-color:#1A0A0A"/>
-      <stop offset="75%" style="stop-color:#4A0E0E"/>
-      <stop offset="100%" style="stop-color:#8B0000"/>
-    </linearGradient>
-    <linearGradient id="wave1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#DC143C;stop-opacity:0.6"/>
-      <stop offset="50%" style="stop-color:#FF4444;stop-opacity:0.3"/>
-      <stop offset="100%" style="stop-color:#8B0000;stop-opacity:0.6"/>
-    </linearGradient>
-    <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#FF0000;stop-opacity:0.4"/>
-      <stop offset="50%" style="stop-color:#FF6347;stop-opacity:0.2"/>
-      <stop offset="100%" style="stop-color:#DC143C;stop-opacity:0.4"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <filter id="softGlow">
-      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
-  <style>
-    @keyframes wave1 {
-      0%, 100% { d: path("M0,280 C200,240 400,300 600,260 C800,220 1000,280 1200,250 L1200,320 L0,320 Z"); }
-      50% { d: path("M0,260 C200,300 400,240 600,280 C800,260 1000,220 1200,270 L1200,320 L0,320 Z"); }
-    }
-    @keyframes wave2 {
-      0%, 100% { d: path("M0,290 C300,260 500,310 700,270 C900,250 1100,290 1200,260 L1200,320 L0,320 Z"); }
-      50% { d: path("M0,270 C300,310 500,260 700,290 C900,270 1100,250 1200,280 L1200,320 L0,320 Z"); }
-    }
-    @keyframes wave3 {
-      0%, 100% { d: path("M0,300 C250,280 450,310 650,285 C850,260 1050,300 1200,275 L1200,320 L0,320 Z"); }
-      50% { d: path("M0,285 C250,310 450,275 650,300 C850,285 1050,265 1200,295 L1200,320 L0,320 Z"); }
-    }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
-    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-    .wave1 { animation: wave1 8s ease-in-out infinite; }
-    .wave2 { animation: wave2 6s ease-in-out infinite; }
-    .wave3 { animation: wave3 10s ease-in-out infinite; }
-    .title { animation: fadeIn 1.5s ease-out; }
-    .subtitle { animation: fadeIn 2s ease-out 0.3s both; }
-    .bolt { animation: pulse 2s ease-in-out infinite; }
-    .dot { animation: float 3s ease-in-out infinite; }
-  </style>
-  
-  <rect width="1200" height="320" fill="url(#bg)"/>
-  
-  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FF000008" stroke-width="0.5"/>
-  </pattern>
-  <rect width="1200" height="320" fill="url(#grid)"/>
-  
-  <circle class="dot" cx="100" cy="60" r="2" fill="#FF444433" style="animation-delay: 0s"/>
-  <circle class="dot" cx="300" cy="40" r="1.5" fill="#FF666633" style="animation-delay: 0.5s"/>
-  <circle class="dot" cx="500" cy="70" r="2.5" fill="#FF444433" style="animation-delay: 1s"/>
-  <circle class="dot" cx="700" cy="35" r="1.5" fill="#FF666633" style="animation-delay: 1.5s"/>
-  <circle class="dot" cx="900" cy="55" r="2" fill="#FF444433" style="animation-delay: 2s"/>
-  <circle class="dot" cx="1100" cy="45" r="1.5" fill="#FF666633" style="animation-delay: 0.7s"/>
-  <circle class="dot" cx="200" cy="90" r="1" fill="#FF444422" style="animation-delay: 1.2s"/>
-  <circle class="dot" cx="800" cy="80" r="1" fill="#FF444422" style="animation-delay: 0.3s"/>
-  
-  <text class="title bolt" x="600" y="110" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="72" font-weight="800" fill="#FFFFFF" filter="url(#glow)">⚡ BHANU ⚡</text>
-  
-  <text class="subtitle" x="600" y="160" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="400" fill="#FF9999" filter="url(#softGlow)">Red Teamer  |  Pentester  |  Security Researcher  |  Blogger</text>
-  
-  <line class="subtitle" x1="350" y1="185" x2="850" y2="185" stroke="#FF444444" stroke-width="1"/>
-  
-  <text class="subtitle" x="600" y="210" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#FF666688" style="animation-delay: 0.6s">~ breaking things to make them stronger ~</text>
-  
-  <path class="wave1" d="M0,280 C200,240 400,300 600,260 C800,220 1000,280 1200,250 L1200,320 L0,320 Z" fill="url(#wave1)"/>
-  <path class="wave2" d="M0,290 C300,260 500,310 700,270 C900,250 1100,290 1200,260 L1200,320 L0,320 Z" fill="url(#wave2)"/>
-  <path class="wave3" d="M0,300 C250,280 450,310 650,285 C850,260 1050,300 1200,275 L1200,320 L0,320 Z" fill="#0D1117" opacity="0.8"/>
-</svg>
+
+      <svg
+        width="854"
+        height="200"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        style="z-index:1;position:relative"
+        viewBox="0 0 854 200"
+      >
+        <style>
+      .text {   font-size: 60px;   font-weight: 700;   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;  } .desc {   font-size: 20px;   font-weight: 500;   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;  } 
+      .text, .desc {   animation: fadeIn 1.2s ease-in-out forwards;  } @keyframes fadeIn {   from {     opacity: 0;   }   to {     opacity: 1;   }  } 
+    </style>
+        <defs>
+              <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#0D1117"/><stop offset="25%" stop-color="#1A0A0A"/><stop offset="50%" stop-color="#4A0E0E"/><stop offset="75%" stop-color="#8B0000"/><stop offset="100%" stop-color="#DC143C"/>
+              </linearGradient>
+            </defs>
+        
+      <g transform="translate(427, 100) scale(1, 1) translate(-427, -100)">
+        <path d="" fill="url(#linear)" opacity="0.4" >
+          <animate
+              attributeName="d"
+              dur="20s"
+              repeatCount="indefinite"
+              keyTimes="0;0.333;0.667;1"
+              calcmod="spline"
+              keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1"
+              begin="0s"
+              values="M0 0L 0 120Q 213.5 160 427 130T 854 155L 854 0 Z;M0 0L 0 145Q 213.5 160 427 140T 854 130L 854 0 Z;M0 0L 0 165Q 213.5 135 427 165T 854 130L 854 0 Z;M0 0L 0 120Q 213.5 160 427 130T 854 155L 854 0 Z">
+          </animate>
+        </path>
+        <path d="" fill="url(#linear)" opacity="0.4" >
+          <animate
+            attributeName="d"
+            dur="20s"
+            repeatCount="indefinite"
+            keyTimes="0;0.333;0.667;1"
+            calcmod="spline"
+            keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1"
+            begin="-10s"
+            values="M0 0L 0 135Q 213.5 180 427 150T 854 160L 854 0 Z;M0 0L 0 150Q 213.5 120 427 120T 854 140L 854 0 Z;M0 0L 0 145Q 213.5 125 427 150T 854 165L 854 0 Z;M0 0L 0 135Q 213.5 180 427 150T 854 160L 854 0 Z">
+          </animate>
+        </path>
+      </g>
+         <text text-anchor="middle" alignment-baseline="middle" x="50%" y="35%" class="text" style="fill:#ff6b6b;" stroke="#none" stroke-width="1" >Bhanu Namikaze</text>
+        <text text-anchor="middle" alignment-baseline="middle" x="50%" y="55%" class="desc" style="fill:#ff6b6b;">Offensive Security | Adversary Emulation</text>
+      </svg>
+    
