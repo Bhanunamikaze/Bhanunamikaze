@@ -1,0 +1,117 @@
+name: Update Profile Stats & Snake
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"  # Every 6 hours
+  workflow_dispatch:  # Manual trigger
+  push:
+    branches: [main]
+
+jobs:
+  # Job 1: Generate contribution snake animation
+  generate-snake:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Generate Snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+
+      - name: Push snake to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # Job 2: Refresh all local assets (badges, stats cards) & update README stats
+  update-assets:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download badges & stats cards
+        run: |
+          chmod +x scripts/download-assets.sh
+          bash scripts/download-assets.sh "${{ github.repository_owner }}"
+
+      - name: Fetch GitHub Stats (for README placeholders)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+        run: |
+          echo "📊 Fetching stats for $USERNAME..."
+
+          # Get contributions and repo data via GraphQL
+          CONTRIB_DATA=$(gh api graphql -f query='
+            query($user: String!) {
+              user(login: $user) {
+                contributionsCollection {
+                  contributionCalendar {
+                    totalContributions
+                  }
+                }
+                repositories(first: 100, ownerAffiliations: OWNER) {
+                  totalCount
+                  nodes {
+                    name
+                    languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+                      edges {
+                        size
+                        node { name }
+                      }
+                    }
+                  }
+                }
+              }
+            }' -f user="$USERNAME")
+
+          CONTRIBUTIONS=$(echo "$CONTRIB_DATA" | jq '.data.user.contributionsCollection.contributionCalendar.totalContributions')
+          TOTAL_REPOS=$(echo "$CONTRIB_DATA" | jq '.data.user.repositories.totalCount')
+
+          # Calculate total lines of code
+          TOTAL_LOC=0
+          while IFS= read -r repo; do
+            LANGUAGES=$(gh api "repos/$USERNAME/$repo/languages" 2>/dev/null || echo '{}')
+            while IFS="=" read -r lang bytes; do
+              if [ -n "$lang" ] && [ -n "$bytes" ]; then
+                TOTAL_LOC=$((TOTAL_LOC + bytes))
+              fi
+            done < <(echo "$LANGUAGES" | jq -r 'to_entries[] | "\(.key)=\(.value)"')
+          done < <(gh api "users/$USERNAME/repos?per_page=100&type=owner" --jq '.[].name')
+
+          # Convert bytes to lines (~40 bytes/line)
+          TOTAL_LINES=$((TOTAL_LOC / 40))
+          if [ $TOTAL_LINES -gt 1000000 ]; then
+            LOC_DISPLAY="$(echo "scale=1; $TOTAL_LINES / 1000000" | bc)M+"
+          elif [ $TOTAL_LINES -gt 1000 ]; then
+            LOC_DISPLAY="$(echo "scale=1; $TOTAL_LINES / 1000" | bc)K+"
+          else
+            LOC_DISPLAY="$TOTAL_LINES"
+          fi
+
+          echo "  Contributions: $CONTRIBUTIONS | Repos: $TOTAL_REPOS | LoC: ~$LOC_DISPLAY"
+
+          # Update README placeholders
+          sed -i "s/<!--CONTRIBUTIONS-->.*<!--\/CONTRIBUTIONS-->/<!--CONTRIBUTIONS-->${CONTRIBUTIONS}<!--\/CONTRIBUTIONS-->/" README.md
+          sed -i "s/<!--REPOS-->.*<!--\/REPOS-->/<!--REPOS-->${TOTAL_REPOS}<!--\/REPOS-->/" README.md
+          sed -i "s/<!--LOC-->.*<!--\/LOC-->/<!--LOC-->${LOC_DISPLAY}<!--\/LOC-->/" README.md
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff --staged --quiet || {
+            git commit -m "chore: refresh profile assets & stats [skip ci]"
+            git push
+          }
