@@ -72,7 +72,7 @@ fun_fact: >
 
 | 🔥 Contributions (Year) | 📦 Repositories | 📝 Lines of Code |
 |:---:|:---:|:---:|
-| **<!--CONTRIBUTIONS-->307<!--/CONTRIBUTIONS-->** | **<!--REPOS-->53<!--/REPOS-->** | **<!--LOC-->904.5K+<!--/LOC-->** |
+| **<!--CONTRIBUTIONS-->306<!--/CONTRIBUTIONS-->** | **<!--REPOS-->53<!--/REPOS-->** | **<!--LOC-->904.5K+<!--/LOC-->** |
 
 </div>
 
