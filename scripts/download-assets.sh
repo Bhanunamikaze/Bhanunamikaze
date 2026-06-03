@@ -52,6 +52,21 @@ declare -A PROJECTS=(
   ["vmwareapipentest"]="🛰️_VMwareAPIPentest-SOAP_API_Tester-FF0000?style=for-the-badge&labelColor=000"
   ["calderaagent"]="🕵️_CalderaAgent-Go_Linux_Implant-FF0000?style=for-the-badge&labelColor=000"
   ["agentic-seo"]="🤖_Agentic_SEO_Skill-LLM_SEO_Analysis-58A6FF?style=for-the-badge&labelColor=000"
+  ["code-vulnscan-skill"]="🤖_Code__VulnScan__Skill-LLM_Security_Scanning-58A6FF?style=for-the-badge&labelColor=000"
+  ["ai-dataset-generator"]="📊_AI_Dataset_Generator-Structured_Dataset_Generator-58A6FF?style=for-the-badge&labelColor=000"
+  ["cve-2026-2587-exploit-poc"]="💥_CVE--2026--2587-Exploit_PoC-FF0000?style=for-the-badge&labelColor=000"
+  ["badhost-cve-2026-48710"]="💀_BadHost_CVE--2026--48710-HTTP_Host_Exploit-FF0000?style=for-the-badge&labelColor=000"
+  ["cve-2024-42009"]="🔓_CVE--2024--42009-Exploit_RCE-FF0000?style=for-the-badge&labelColor=000"
+  ["processhollowing"]="💉_ProcessHollowing-Process_Injection-FF0000?style=for-the-badge&labelColor=000"
+  ["phpshell"]="🐚_PHPShell-Stealth_Web_Shell-FF0000?style=for-the-badge&labelColor=000"
+  ["filespectre"]="👻_FileSpectre-Stealth_Exfiltration-FF0000?style=for-the-badge&labelColor=000"
+  ["vaktscan"]="🛡️_VaktScan-Vulnerability_Scanner-FF0000?style=for-the-badge&labelColor=000"
+  ["autorecon"]="⚙️_AutoRecon-Automated_Recon-FF0000?style=for-the-badge&labelColor=000"
+  ["protoscan"]="🌐_ProtoScan-Prototype_Pollution_Scanner-FF0000?style=for-the-badge&labelColor=000"
+  ["credargus"]="🔑_CredArgus-Credential_Harvester-FF0000?style=for-the-badge&labelColor=000"
+  ["kronmancer"]="⏳_KronMancer-Cron_Job_Vuln_Scanner-FF0000?style=for-the-badge&labelColor=000"
+  ["redcore"]="🪐_RedCore-Offensive_Framework-FF0000?style=for-the-badge&labelColor=000"
+  ["pentest-scripts"]="📜_PenTest--Scripts-Offensive_Tooling-FF0000?style=for-the-badge&labelColor=000"
 )
 
 # --- Social Badges ---

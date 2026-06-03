@@ -84,22 +84,45 @@ fun_fact: >
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 <!-- RED TEAM ARSENAL -->
+<!-- RED TEAM ARSENAL -->
 <h2>🔴 Red Team Arsenal</h2>
 
+<h3>💀 Malware Dev & Post-Exploitation</h3>
 <p>
   <a href="https://github.com/Bhanunamikaze/DPAPI_BOF" target="_blank"><img src="assets/badges/dpapi-bof.svg" alt="DPAPI_BOF" /></a>
-  <a href="https://github.com/Bhanunamikaze/ESXiBrute" target="_blank"><img src="assets/badges/esxibrute.svg" alt="ESXiBrute" /></a>
-  <a href="https://github.com/Bhanunamikaze/JenkinsVulnFinder" target="_blank"><img src="assets/badges/jenkinsvulnfinder.svg" alt="JenkinsVulnFinder" /></a>
-  <a href="https://github.com/Bhanunamikaze/VMwareAPIPentest" target="_blank"><img src="assets/badges/vmwareapipentest.svg" alt="VMwareAPIPentest" /></a>
   <a href="https://github.com/Bhanunamikaze/CalderaAgent" target="_blank"><img src="assets/badges/calderaagent.svg" alt="CalderaAgent" /></a>
+  <a href="https://github.com/Bhanunamikaze/ProcessHollowing" target="_blank"><img src="assets/badges/processhollowing.svg" alt="ProcessHollowing" /></a>
+  <a href="https://github.com/Bhanunamikaze/PHPShell" target="_blank"><img src="assets/badges/phpshell.svg" alt="PHPShell" /></a>
+  <a href="https://github.com/Bhanunamikaze/FileSpectre" target="_blank"><img src="assets/badges/filespectre.svg" alt="FileSpectre" /></a>
 </p>
 
-<h2>🧰 Other Projects</h2>
+<h3>💥 CVEs & Exploit PoCs</h3>
+<p>
+  <a href="https://github.com/Bhanunamikaze/CVE-2026-2587-Exploit-POC" target="_blank"><img src="assets/badges/cve-2026-2587-exploit-poc.svg" alt="CVE-2026-2587-Exploit-POC" /></a>
+  <a href="https://github.com/Bhanunamikaze/BadHost-CVE-2026-48710-Exploit" target="_blank"><img src="assets/badges/badhost-cve-2026-48710.svg" alt="BadHost-CVE-2026-48710-Exploit" /></a>
+  <a href="https://github.com/Bhanunamikaze/CVE-2024-42009" target="_blank"><img src="assets/badges/cve-2024-42009.svg" alt="CVE-2024-42009" /></a>
+</p>
 
+<h3>🔍 Vulnerability Scanners & Recon</h3>
+<p>
+  <a href="https://github.com/Bhanunamikaze/JenkinsVulnFinder" target="_blank"><img src="assets/badges/jenkinsvulnfinder.svg" alt="JenkinsVulnFinder" /></a>
+  <a href="https://github.com/Bhanunamikaze/ESXiBrute" target="_blank"><img src="assets/badges/esxibrute.svg" alt="ESXiBrute" /></a>
+  <a href="https://github.com/Bhanunamikaze/VMwareAPIPentest" target="_blank"><img src="assets/badges/vmwareapipentest.svg" alt="VMwareAPIPentest" /></a>
+  <a href="https://github.com/Bhanunamikaze/VaktScan" target="_blank"><img src="assets/badges/vaktscan.svg" alt="VaktScan" /></a>
+  <a href="https://github.com/Bhanunamikaze/AutoRecon" target="_blank"><img src="assets/badges/autorecon.svg" alt="AutoRecon" /></a>
+  <a href="https://github.com/Bhanunamikaze/ProtoScan" target="_blank"><img src="assets/badges/protoscan.svg" alt="ProtoScan" /></a>
+  <a href="https://github.com/Bhanunamikaze/CredArgus" target="_blank"><img src="assets/badges/credargus.svg" alt="CredArgus" /></a>
+  <a href="https://github.com/Bhanunamikaze/KronMancer" target="_blank"><img src="assets/badges/kronmancer.svg" alt="KronMancer" /></a>
+  <a href="https://github.com/Bhanunamikaze/RedCore" target="_blank"><img src="assets/badges/redcore.svg" alt="RedCore" /></a>
+  <a href="https://github.com/Bhanunamikaze/PenTest-Scripts" target="_blank"><img src="assets/badges/pentest-scripts.svg" alt="PenTest-Scripts" /></a>
+</p>
+
+<h3>🤖 AI Skills & Dataset Generation</h3>
 <p>
   <a href="https://github.com/Bhanunamikaze/Agentic-SEO-Skill" target="_blank"><img src="assets/badges/agentic-seo.svg" alt="Agentic SEO Skill" /></a>
+  <a href="https://github.com/Bhanunamikaze/Code-VulnScan-Skill" target="_blank"><img src="assets/badges/code-vulnscan-skill.svg" alt="Code-VulnScan-Skill" /></a>
+  <a href="https://github.com/Bhanunamikaze/AI-Dataset-Generator" target="_blank"><img src="assets/badges/ai-dataset-generator.svg" alt="AI-Dataset-Generator" /></a>
 </p>
-
 
 <h3>💻 Languages</h3>
 <p>
