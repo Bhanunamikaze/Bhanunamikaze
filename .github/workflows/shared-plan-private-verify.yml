@@ -1,0 +1,87 @@
+name: Verify private shared-plan coverage merge
+
+on:
+  pull_request:
+    branches:
+      - agent/shared-plan-go-cache-20260802
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  STEINZ_REF: agent/shared-scan-execution-plan-integration
+
+jobs:
+  checkout-and-focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout private SteinzDAST merge
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          repository: Bhanunamikaze/SteinzDAST
+          ref: ${{ env.STEINZ_REF }}
+          token: ${{ secrets.STEINZDAST_PAT || secrets.REPO_PAT || secrets.GH_PAT || secrets.PAT || secrets.TOKEN || github.token }}
+          fetch-depth: 0
+          persist-credentials: false
+          path: SteinzDAST
+      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
+        with:
+          go-version: '1.25.12'
+          cache: false
+      - name: Export exact source
+        working-directory: SteinzDAST
+        run: |
+          git archive --format=tar.gz -o /tmp/shared-plan-private-source.tgz HEAD
+          sha256sum /tmp/shared-plan-private-source.tgz > /tmp/shared-plan-private-source.sha256
+      - name: Upload exact source
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: shared-plan-private-source-${{ github.run_id }}
+          path: |
+            /tmp/shared-plan-private-source.tgz
+            /tmp/shared-plan-private-source.sha256
+          if-no-files-found: error
+          retention-days: 2
+          compression-level: 0
+      - name: Formatting, affected build and tests
+        working-directory: SteinzDAST
+        run: |
+          unformatted=$(git ls-files -z '*.go' ':!reference/**' | xargs -0 gofmt -l)
+          test -z "$unformatted" || { printf '%s\n' "$unformatted"; exit 1; }
+          git diff --check
+          go build ./cmd/quarry ./cmd/quarry-scan-worker ./pkg/runsvc ./pkg/cli ./pkg/model ./pkg/run ./pkg/serve ./benchmark/resultsdb ./benchmark/runner ./benchmark/canary
+          go vet ./pkg/runsvc ./pkg/cli ./pkg/model ./pkg/run ./pkg/serve ./benchmark/resultsdb ./benchmark/runner ./benchmark/canary ./cmd/quarry-scan-worker
+          go test -timeout 60m -count=1 ./pkg/runsvc ./pkg/cli ./pkg/model ./pkg/run ./pkg/serve ./benchmark/resultsdb ./benchmark/runner ./benchmark/canary ./cmd/quarry-scan-worker
+
+  repository-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout private SteinzDAST merge
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          repository: Bhanunamikaze/SteinzDAST
+          ref: ${{ env.STEINZ_REF }}
+          token: ${{ secrets.STEINZDAST_PAT || secrets.REPO_PAT || secrets.GH_PAT || secrets.PAT || secrets.TOKEN || github.token }}
+          fetch-depth: 0
+          persist-credentials: false
+          path: SteinzDAST
+      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
+        with:
+          go-version: '1.25.12'
+          cache: false
+      - name: Repository-wide gates
+        working-directory: SteinzDAST
+        run: |
+          go build ./...
+          go test -timeout 120m -count=1 ./...
+          go vet ./...
+          ./scripts/check-conformance.sh
+          ./scripts/probe.sh
+          make verify
