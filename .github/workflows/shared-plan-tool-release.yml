@@ -1,0 +1,45 @@
+name: Shared plan scanner tool release
+
+on:
+  push:
+    branches:
+      - agent/shared-plan-go-cache-20260802
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
+        with:
+          go-version: '1.25.12'
+          cache: false
+      - name: Build pinned nuclei
+        env:
+          GOBIN: ${{ runner.temp }}/shared-plan-tools
+          GOPROXY: https://proxy.golang.org
+          GOSUMDB: sum.golang.org
+        run: |
+          mkdir -p "$GOBIN"
+          go install github.com/projectdiscovery/nuclei/v3/cmd/nuclei@v3.4.10
+          "$GOBIN/nuclei" -version
+          sha256sum "$GOBIN/nuclei" > "$GOBIN/nuclei.sha256"
+          tar -C "$GOBIN" -czf "${{ runner.temp }}/shared-plan-nuclei-linux-amd64.tgz" nuclei nuclei.sha256
+      - name: Publish temporary public asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag=shared-plan-tools-temporary
+          gh release delete "$tag" --yes --cleanup-tag 2>/dev/null || true
+          git tag -f "$tag" "$GITHUB_SHA"
+          git push origin "refs/tags/$tag" --force
+          gh release create "$tag" "${{ runner.temp }}/shared-plan-nuclei-linux-amd64.tgz" \
+            --title "Temporary shared-plan scanner tool" \
+            --notes "Pinned public nuclei build for local SteinzDAST canary verification. No private source." 
