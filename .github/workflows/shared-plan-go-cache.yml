@@ -1,0 +1,43 @@
+name: Shared plan Go module cache
+
+on:
+  push:
+    branches:
+      - agent/shared-plan-go-cache-20260802
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cache:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
+        with:
+          go-version: '1.25.12'
+          cache: false
+      - name: Download public module graph
+        working-directory: tmp/shared-plan-go-cache
+        env:
+          GOPROXY: https://proxy.golang.org
+          GOSUMDB: sum.golang.org
+        run: go mod download all
+      - name: Package module cache
+        run: |
+          cache="$(go env GOMODCACHE)"
+          tar -C "$(dirname "$cache")" -czf /tmp/shared-plan-gomodcache.tgz "$(basename "$cache")"
+          sha256sum /tmp/shared-plan-gomodcache.tgz > /tmp/shared-plan-gomodcache.sha256
+      - name: Upload module cache
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: shared-plan-gomodcache-${{ github.run_id }}
+          path: |
+            /tmp/shared-plan-gomodcache.tgz
+            /tmp/shared-plan-gomodcache.sha256
+          if-no-files-found: error
+          retention-days: 1
