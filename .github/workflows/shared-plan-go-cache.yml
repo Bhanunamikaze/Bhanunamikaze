@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - agent/shared-plan-go-cache-20260802
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
