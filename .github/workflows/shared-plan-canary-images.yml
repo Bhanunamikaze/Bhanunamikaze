@@ -1,0 +1,45 @@
+name: Shared plan canary image export
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          persist-credentials: false
+      - name: Export public canary image roots
+        run: |
+          set -euo pipefail
+          out=/tmp/shared-plan-canary-images
+          mkdir -p "$out"
+          export_one() {
+            name="$1"
+            image="$2"
+            docker pull "$image"
+            docker image inspect "$image" > "$out/$name.inspect.json"
+            cid="$(docker create "$image")"
+            docker export "$cid" | gzip -1 > "$out/$name.rootfs.tar.gz"
+            docker rm "$cid"
+          }
+          export_one hardened-nginx nginx:alpine
+          export_one hardened-httpd httpd:alpine
+          export_one hardened-echo traefik/whoami
+          export_one vampi 'erev0s/vampi@sha256:0a5a224b6e14ae7da6a6ea265178ff71286ff903aec74adee98f660bb0e4ca12'
+          sha256sum "$out"/* > "$out/SHA256SUMS"
+      - name: Upload roots
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: shared-plan-canary-images-${{ github.run_id }}
+          path: /tmp/shared-plan-canary-images
+          if-no-files-found: error
+          retention-days: 1
