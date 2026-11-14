@@ -56,7 +56,12 @@ declare -A PROJECTS=(
   ["ai-dataset-generator"]="📊_AI_Dataset_Generator-Structured_Dataset_Generator-58A6FF?style=for-the-badge&labelColor=000"
   ["cve-2026-2587-exploit-poc"]="💥_CVE--2026--2587-Exploit_PoC-FF0000?style=for-the-badge&labelColor=000"
   ["badhost-cve-2026-48710"]="💀_BadHost_CVE--2026--48710-HTTP_Host_Exploit-FF0000?style=for-the-badge&labelColor=000"
+  ["wp2shell-cve-2026-63030-poc"]="🕸️_WP2Shell-CVE--2026--63030_WordPress_PoC-FF0000?style=for-the-badge&labelColor=000"
+  ["activemq-cve-2023-46604"]="📨_ActiveMQ-CVE--2023--46604_Exploit_PoC-FF0000?style=for-the-badge&labelColor=000"
   ["cve-2024-42009"]="🔓_CVE--2024--42009-Exploit_RCE-FF0000?style=for-the-badge&labelColor=000"
+  ["bluegate-cve-2020-0609"]="🚪_BlueGate-CVE--2020--0609_Exploit_Validator-FF0000?style=for-the-badge&labelColor=000"
+  ["ecdsa-privatekey-recovery"]="🔑_ECDSA-Private_Key_Recovery_Exploit-FF0000?style=for-the-badge&labelColor=000"
+  ["exploits"]="💣_Exploit_Collection-Modified_Working_Exploits-FF0000?style=for-the-badge&labelColor=000"
   ["processhollowing"]="💉_ProcessHollowing-Process_Injection-FF0000?style=for-the-badge&labelColor=000"
   ["phpshell"]="🐚_PHPShell-Stealth_Web_Shell-FF0000?style=for-the-badge&labelColor=000"
   ["filespectre"]="👻_FileSpectre-Stealth_Exfiltration-FF0000?style=for-the-badge&labelColor=000"
@@ -103,14 +108,11 @@ echo ""
 echo "📥 Downloading stats cards..."
 USERNAME="${1:-Bhanunamikaze}"
 
-# GitHub Readme Stats (using sigma-five fork since default deployment is paused)
-curl -sfL "https://github-readme-stats-sigma-five.vercel.app/api?username=${USERNAME}&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true&bg_color=0D1117&title_color=FF6B6B&icon_color=FF6B6B&text_color=C9D1D9&ring_color=FF0000" -o "$ASSETS_DIR/stats/github-stats.svg" && echo "  ✅ github-stats.svg" || echo "  ❌ github-stats.svg"
-
 # Profile Summary Cards
-curl -sfL "http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=${USERNAME}&theme=radical" -o "$ASSETS_DIR/stats/profile-details.svg" && echo "  ✅ profile-details.svg" || echo "  ❌ profile-details.svg"
-curl -sfL "http://github-profile-summary-cards.vercel.app/api/cards/stats?username=${USERNAME}&theme=radical" -o "$ASSETS_DIR/stats/stats-card.svg" && echo "  ✅ stats-card.svg" || echo "  ❌ stats-card.svg"
-curl -sfL "http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=${USERNAME}&theme=radical" -o "$ASSETS_DIR/stats/repos-per-language.svg" && echo "  ✅ repos-per-language.svg" || echo "  ❌ repos-per-language.svg"
-curl -sfL "http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=${USERNAME}&theme=radical" -o "$ASSETS_DIR/stats/most-commit-language.svg" && echo "  ✅ most-commit-language.svg" || echo "  ❌ most-commit-language.svg"
+curl -sfL "https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=${USERNAME}&theme=radical" -o "$ASSETS_DIR/stats/profile-details.svg" && echo "  ✅ profile-details.svg" || echo "  ❌ profile-details.svg"
+curl -sfL "https://github-profile-summary-cards.vercel.app/api/cards/stats?username=${USERNAME}&theme=radical" -o "$ASSETS_DIR/stats/stats-card.svg" && echo "  ✅ stats-card.svg" || echo "  ❌ stats-card.svg"
+curl -sfL "https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=${USERNAME}&theme=radical" -o "$ASSETS_DIR/stats/repos-per-language.svg" && echo "  ✅ repos-per-language.svg" || echo "  ❌ repos-per-language.svg"
+curl -sfL "https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=${USERNAME}&theme=radical" -o "$ASSETS_DIR/stats/most-commit-language.svg" && echo "  ✅ most-commit-language.svg" || echo "  ❌ most-commit-language.svg"
 
 echo ""
 echo "✅ All assets downloaded to $ASSETS_DIR/"

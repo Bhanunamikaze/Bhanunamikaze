@@ -62,7 +62,7 @@ fun_fact: >
 ### 📊 &nbsp; GitHub at a Glance
 
 <a href="https://github.com/Bhanunamikaze" target="_blank">
-  <img width="100%" src="assets/stats/github-stats.svg" alt="GitHub Stats" />
+  <img width="100%" src="assets/stats/stats-card.svg" alt="GitHub Stats" />
 </a>
 
 <br/>
@@ -100,7 +100,12 @@ fun_fact: >
 <p>
   <a href="https://github.com/Bhanunamikaze/CVE-2026-2587-Exploit-POC" target="_blank"><img src="assets/badges/cve-2026-2587-exploit-poc.svg" alt="CVE-2026-2587-Exploit-POC" /></a>
   <a href="https://github.com/Bhanunamikaze/BadHost-CVE-2026-48710-Exploit" target="_blank"><img src="assets/badges/badhost-cve-2026-48710.svg" alt="BadHost-CVE-2026-48710-Exploit" /></a>
+  <a href="https://github.com/Bhanunamikaze/WP2Shell-CVE-2026-63030-POC" target="_blank"><img src="assets/badges/wp2shell-cve-2026-63030-poc.svg" alt="WP2Shell-CVE-2026-63030-POC" /></a>
+  <a href="https://github.com/Bhanunamikaze/ActiveMQ-CVE-2023-46604" target="_blank"><img src="assets/badges/activemq-cve-2023-46604.svg" alt="ActiveMQ-CVE-2023-46604" /></a>
   <a href="https://github.com/Bhanunamikaze/CVE-2024-42009" target="_blank"><img src="assets/badges/cve-2024-42009.svg" alt="CVE-2024-42009" /></a>
+  <a href="https://github.com/Bhanunamikaze/BlueGate-CVE-2020-0609" target="_blank"><img src="assets/badges/bluegate-cve-2020-0609.svg" alt="BlueGate-CVE-2020-0609" /></a>
+  <a href="https://github.com/Bhanunamikaze/ECDSA-PrivateKey-Recovery" target="_blank"><img src="assets/badges/ecdsa-privatekey-recovery.svg" alt="ECDSA-PrivateKey-Recovery" /></a>
+  <a href="https://github.com/Bhanunamikaze/Exploits" target="_blank"><img src="assets/badges/exploits.svg" alt="Exploits" /></a>
 </p>
 
 <h3>🔍 Vulnerability Scanners & Recon</h3>
