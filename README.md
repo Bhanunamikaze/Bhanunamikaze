@@ -129,6 +129,11 @@ fun_fact: >
   <a href="https://github.com/Bhanunamikaze/AI-Dataset-Generator" target="_blank"><img src="assets/badges/ai-dataset-generator.svg" alt="AI-Dataset-Generator" /></a>
 </p>
 
+<h3>🧠 AI Research & Model Experimentation</h3>
+<p>
+  <a href="https://github.com/Bhanunamikaze/Abliteration-Workbench" target="_blank"><img src="assets/badges/abliteration-workbench.svg" alt="Abliteration Workbench" /></a>
+</p>
+
 <h3>💻 Languages</h3>
 <p>
   <img src="assets/badges/python.svg" alt="Python" />

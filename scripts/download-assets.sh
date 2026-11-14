@@ -54,6 +54,7 @@ declare -A PROJECTS=(
   ["agentic-seo"]="🤖_Agentic_SEO_Skill-LLM_SEO_Analysis-58A6FF?style=for-the-badge&labelColor=000"
   ["code-vulnscan-skill"]="🤖_Code__VulnScan__Skill-LLM_Security_Scanning-58A6FF?style=for-the-badge&labelColor=000"
   ["ai-dataset-generator"]="📊_AI_Dataset_Generator-Structured_Dataset_Generator-58A6FF?style=for-the-badge&labelColor=000"
+  ["abliteration-workbench"]="🧠_Abliteration_Workbench-LLM_Interpretability_Research-8B5CF6?style=for-the-badge&labelColor=000"
   ["cve-2026-2587-exploit-poc"]="💥_CVE--2026--2587-Exploit_PoC-FF0000?style=for-the-badge&labelColor=000"
   ["badhost-cve-2026-48710"]="💀_BadHost_CVE--2026--48710-HTTP_Host_Exploit-FF0000?style=for-the-badge&labelColor=000"
   ["wp2shell-cve-2026-63030-poc"]="🕸️_WP2Shell-CVE--2026--63030_WordPress_PoC-FF0000?style=for-the-badge&labelColor=000"
